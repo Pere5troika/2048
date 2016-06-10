@@ -17,7 +17,8 @@ $tile-gold-color: #edc22e;
 $tile-gold-glow-color: lighten($tile-gold-color, 15%);
 
 $game-container-margin-top: 40px;
-$game-container-background: #E1E4ED;
+$game-container-background: rgba(1,1,1, 0);
+$game-container-background-white: #E1E4ED;
 
 $transition-speed: 100ms;
 
@@ -25,7 +26,7 @@ html, body {
   margin: 0;
   padding: 0;
 
-  background: #484848;
+  // background: #484848;
   color: $text-color;
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px;
@@ -158,7 +159,7 @@ hr {
 // Styles for buttons
 @mixin button {
   display: inline-block;
-  background: darken($game-container-background, 20%);
+  background: darken($game-container-background-white, 20%);
   border-radius: 3px;
   padding: 0 20px;
   text-decoration: none;
@@ -546,4 +547,32 @@ hr {
       margin-top: 30px !important;
     }
   }
+}
+
+// @import url("http://fonts.googleapis.com/css?family=Carrois+Gothic");
+// css for falling code;
+@font-face {
+  font-family: 'matrix-code';
+  src: url('font/matrix-code.eot?#iefix') format('embedded-opentype'),
+       url('font/matrix-code.woff') format('woff'),
+       url('font/matrix-code.ttf')  format('truetype'),
+       url('font/matrix-code.svg#svgFontName') format('svg');
+}
+
+// body {
+//   background: black;
+// }
+
+#stats {
+    // z-index: 100;
+}
+
+canvas {
+  overflow: hidden;
+}
+
+#canvas {
+  z-index: -10;
+  background: black;
+  position: fixed;
 }

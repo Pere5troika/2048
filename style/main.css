@@ -2,7 +2,6 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: #484848;
   color: #91D4EE;
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px; }
@@ -50,7 +49,7 @@ h1.title {
 .score-container, .best-container {
   position: relative;
   display: inline-block;
-  background: #E1E4ED;
+  background: rgba(1, 1, 1, 0);
   padding: 15px 25px;
   font-size: 25px;
   height: 25px;
@@ -143,7 +142,7 @@ hr {
   -ms-user-select: none;
   -ms-touch-action: none;
   touch-action: none;
-  background: #E1E4ED;
+  background: rgba(1, 1, 1, 0);
   border-radius: 6px;
   width: 500px;
   height: 500px;
@@ -567,7 +566,7 @@ hr {
     -ms-user-select: none;
     -ms-touch-action: none;
     touch-action: none;
-    background: #E1E4ED;
+    background: rgba(1, 1, 1, 0);
     border-radius: 6px;
     width: 500px;
     height: 500px;
@@ -741,5 +740,15 @@ hr {
     margin-top: 90px !important; }
   .game-message .lower {
     margin-top: 30px !important; } }
+@font-face {
+  font-family: 'matrix-code';
+  src: url("font/matrix-code.eot?#iefix") format("embedded-opentype"), url("font/matrix-code.woff") format("woff"), url("font/matrix-code.ttf") format("truetype"), url("font/matrix-code.svg#svgFontName") format("svg"); }
+canvas {
+  overflow: hidden; }
+
+#canvas {
+  z-index: -10;
+  background: black;
+  position: fixed; }
 
 /*# sourceMappingURL=main.css.map */
