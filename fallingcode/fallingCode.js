@@ -95,10 +95,10 @@ var M = {
 		M.linesC = document.createElement('canvas');
 		M.linesC.width = M.WIDTH;
 		M.linesC.height = M.HEIGHT;
-		M.linesC.style.position = 'absolute';
+		M.linesC.style.position = 'fixed';
 		M.linesC.style.top = 0;
 		M.linesC.style.left = 0;
-		M.linesC.style.zIndex = 10;
+		M.linesC.style.zIndex = -9;
 		document.body.appendChild(M.linesC);
 		M.ctx2 = M.linesC.getContext('2d');
 

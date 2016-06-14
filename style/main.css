@@ -6,20 +6,27 @@ html, body {
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px; }
 
-body {
-  margin: 80px 0; }
-
 .heading:after {
   content: "";
   display: block;
   clear: both; }
 
+h3.title {
+  margin: 0;
+  padding-top: 15px;
+  font-size: 20px;
+  font-family: "Orbitron";
+  font-weight: bold; }
+
 h1.title {
   font-size: 80px;
   font-weight: bold;
-  margin: 0;
+  margin: 0px;
+  margin-top: -15px;
   display: block;
-  float: left; }
+  float: left;
+  font-family: "Orbitron";
+  font-weight: bold; }
 
 @-webkit-keyframes $animation-name {
   0% {
@@ -49,14 +56,14 @@ h1.title {
 .score-container, .best-container {
   position: relative;
   display: inline-block;
-  background: rgba(1, 1, 1, 0);
+  background: rgba(1, 1, 1, 0.3);
   padding: 15px 25px;
   font-size: 25px;
   height: 25px;
   line-height: 47px;
   font-weight: bold;
   border-radius: 3px;
-  color: white;
+  color: #91D4EE;
   margin-top: 8px;
   text-align: center; }
   .score-container:after, .best-container:after {
@@ -68,7 +75,7 @@ h1.title {
     font-size: 13px;
     line-height: 13px;
     text-align: center;
-    color: #484848; }
+    color: white; }
   .score-container .score-addition, .best-container .score-addition {
     position: absolute;
     right: 30px;
@@ -525,9 +532,13 @@ hr {
     margin: 20px 0;
     padding: 0 20px; }
 
+  h3.subtitle {
+    margin-top: 15px;
+    margin-bottom: 0px;
+    float: left; }
+
   h1.title {
-    font-size: 27px;
-    margin-top: 15px; }
+    font-size: 27px; }
 
   .container {
     width: 280px;
