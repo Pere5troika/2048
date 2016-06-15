@@ -3,7 +3,7 @@ html, body {
   margin: 0;
   padding: 0;
   color: #91D4EE;
-  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "orbitron", "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px; }
 
 .heading:after {
@@ -15,7 +15,7 @@ h3.title {
   margin: 0;
   padding-top: 15px;
   font-size: 20px;
-  font-family: "Orbitron";
+  font-family: "orbitron", "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   font-weight: bold; }
 
 h1.title {
@@ -25,7 +25,7 @@ h1.title {
   margin-top: -15px;
   display: block;
   float: left;
-  font-family: "Orbitron";
+  font-family: "orbitron", "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   font-weight: bold; }
 
 @-webkit-keyframes $animation-name {
@@ -504,8 +504,9 @@ hr {
   clear: both; }
 
 .game-intro {
+  margin-top: 15px;
   float: left;
-  line-height: 42px;
+  line-height: normal;
   margin-bottom: 0; }
 
 .restart-button {
@@ -521,8 +522,10 @@ hr {
   text-align: center;
   float: right; }
 
-.game-explanation {
-  margin-top: 50px; }
+div.game-explanation {
+  margin-top: 50px;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 10px; }
 
 @media screen and (max-width: 520px) {
   html, body {
@@ -532,13 +535,22 @@ hr {
     margin: 20px 0;
     padding: 0 20px; }
 
-  h3.subtitle {
-    margin-top: 15px;
-    margin-bottom: 0px;
-    float: left; }
+  h3.title {
+    margin: 0;
+    padding-top: 15px;
+    font-size: 20px;
+    font-family: "orbitron", "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+    font-weight: bold; }
 
   h1.title {
-    font-size: 27px; }
+    font-size: 80px;
+    font-weight: bold;
+    margin: 0px;
+    margin-top: -15px;
+    display: block;
+    float: left;
+    font-family: "orbitron", "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+    font-weight: bold; }
 
   .container {
     width: 280px;
@@ -553,6 +565,7 @@ hr {
     margin-bottom: 10px; }
 
   .game-intro {
+    margin-top: 15px;
     width: 55%;
     display: block;
     box-sizing: border-box;
@@ -761,5 +774,15 @@ canvas {
   z-index: -10;
   background: black;
   position: fixed; }
+
+strong {
+  font-weight: 700; }
+
+.centered {
+  text-align: center; }
+
+img.center {
+  display: block;
+  margin: 0 auto; }
 
 /*# sourceMappingURL=main.css.map */

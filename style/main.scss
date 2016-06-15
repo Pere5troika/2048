@@ -22,13 +22,15 @@ $game-container-background-white: #E1E4ED;
 
 $transition-speed: 100ms;
 
+$programFont: "orbitron";
+
 html, body {
   margin: 0;
   padding: 0;
 
   // background: #484848;
   color: $text-color;
-  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: $programFont, "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px;
 }
 
@@ -40,7 +42,7 @@ h3.title {
 margin: 0;
 padding-top: 15px;
 font-size: 20px;
-font-family: "Orbitron";
+font-family: $programFont, "Clear Sans", "Helvetica Neue", Arial, sans-serif;
 font-weight: bold;
 }
 
@@ -51,7 +53,7 @@ h1.title {
   margin-top: -15px;
   display: block;
   float: left;
-  font-family: "Orbitron";
+  font-family: $programFont, "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   font-weight: bold;
 }
 
@@ -464,8 +466,9 @@ hr {
 }
 
 .game-intro {
+  margin-top:15px;
   float: left;
-  line-height: 42px;
+  line-height: normal;
   margin-bottom: 0;
 }
 
@@ -476,8 +479,11 @@ hr {
   float: right;
 }
 
-.game-explanation {
-  margin-top: 50px;
+
+div.game-explanation {
+    margin-top: 50px;
+    background: rgba(0, 0, 0, .9);
+    padding: 10px;
 }
 
 @include smaller($mobile-threshold) {
@@ -498,14 +504,23 @@ hr {
     padding: 0 20px;
   }
 
-  h3.subtitle {
-    margin-top: 15px;
-    margin-bottom: 0px;
-    float: left;
+  h3.title {
+  margin: 0;
+  padding-top: 15px;
+  font-size: 20px;
+  font-family: $programFont, "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-weight: bold;
   }
 
   h1.title {
-    font-size: 27px;
+    font-size: 80px;
+    font-weight: bold;
+    margin: 0px;
+    margin-top: -15px;
+    display: block;
+    float: left;
+    font-family: $programFont, "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+    font-weight: bold;
   }
 
   .container {
@@ -525,6 +540,7 @@ hr {
 
   // Show intro and restart button side by side
   .game-intro {
+    margin-top:15px;
     width: 55%;
     display: block;
     box-sizing: border-box;
@@ -587,4 +603,15 @@ canvas {
   z-index: -10;
   background: black;
   position: fixed;
+}
+
+strong {
+  font-weight: 700;
+}
+.centered {
+  text-align: center;
+}
+img.center {
+    display: block;
+    margin: 0 auto;
 }

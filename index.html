@@ -9,7 +9,7 @@
   <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
   <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
   <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png"  media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone, retina -->
-  <link href='https://fonts.googleapis.com/css?family=Orbitron:500,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Orbitron:500,700,900' rel='stylesheet' type='text/css'>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
@@ -30,7 +30,7 @@
     </div>
 
     <div class="above-game">
-      <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
+      <p class="game-intro">Learn your powers of 2 by trying to reach the 2048!</p>
       <a class="restart-button">New Game</a>
     </div>
 
@@ -74,18 +74,26 @@
 
       </div>
     </div>
-
-    <p class="game-explanation">
-      <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>
-    </p>
-    <hr>
-    <p>
-    <strong class="important">Note:</strong> This site is the official version of 2048. You can play it on your phone via <a href="http://git.io/2048">http://git.io/2048.</a> All other apps or sites are derivatives or fakes, and should be used with caution.
-    </p>
-    <hr>
-    <p>
-    Created by <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a> Based on <a href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a> and conceptually similar to <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer.</a>
-    </p>
+    <div class="game-explanation">
+      <p>
+        <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same value (ie 2^4 & 16) touch, they <strong>merge into one!</strong>
+      </p>
+      <hr>
+      <p>
+      This is a verison of 2048 designed by <a href="https://github.com/Pere5troika">Conor Lamb</a>. I created this because cs0447 sucked without
+      my powers of two memorized. This is for anybody though, from assembly programmers, to bored redditors who want to learn something useful.
+      </p>
+      <hr>
+      <h2 class="centered">For standup guys:</h2>
+      <p>
+      Send me some bitcoin -  <strong>80%</strong> of what I make each month will be donated to <a href="https://wildnet.org/wildlife-programs">Wildlife Conservation Network</a>.....cuz animals r bomb.
+      </p>
+      <img class="center" src="./img/wwf-btc.png"/>
+      <hr>
+      <p>
+      Based on <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli's</a> original <a href="http://git.io/2048">2048,</a> which, in turn, is based on <a href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a> and conceptually similar to <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer.</a>
+      </p>
+    </div>
   </div>
 
   <script src="js/bind_polyfill.js"></script>
