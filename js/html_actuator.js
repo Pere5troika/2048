@@ -69,14 +69,23 @@ HTMLActuator.prototype.addTile = function (tile) {
     if (rand < .30) {
       return tempVal;
     }
-    else if(rand >.30 && rand < .54) {
-      return tempVal.toExponential(0);
+    else if(rand >.30 && rand < .54) { //TODO
+      var root = Math.log2(tempVal);
+      // if(this.tileContainer.id === undefined)
+      // {
+      //   console.log("This works");
+      // } else {
+      //   console.log("NO");
+      // }
+      // this.tileContainer.id = "exp";
+      //TODO figure out how to change the fonts
+      return 2+"^"+root;
     }
     else if(rand >.54 && rand < .78) {
         var t2Bit = (tempVal >>> 0).toString(2);
 
         //spaces at 0s
-        var tempValLength = t2Bit.length();
+        var tempValLength = t2Bit.length;
         var compNumber = "";
         switch (tempVal % 4) {
           case 0:
