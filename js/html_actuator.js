@@ -62,7 +62,56 @@ HTMLActuator.prototype.addTile = function (tile) {
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
-  inner.textContent = tile.value;
+  //if math.random() ? 1 : tile.value, if math.random() ? 2 : exponent,
+  // if math.random() ? 3 : Binary, if math.random() ? 4 : hex.
+  function valueType(tempVal) {
+    var rand = Math.random();
+    if (rand < .30) {
+      return tempVal;
+    }
+    else if(rand >.30 && rand < .54) {
+      return tempVal.toExponential(0);
+    }
+    else if(rand >.54 && rand < .78) {
+        var t2Bit = (tempVal >>> 0).toString(2);
+
+        //spaces at 0s
+        var tempValLength = t2Bit.length();
+        var compNumber = "";
+        switch (tempVal % 4) {
+          case 0:
+            for (var x = 0; x < tempValLength-4; x+=4)
+            {
+              compNumber.concat(t2Bit.slice(x, x+4)+' ');
+            }
+            break;
+          case 1:
+            compNumber.concat(t2Bit.slice(0,1)+' ');
+            for (var x = 1; x < tempValLength-4; x+=4)
+            {
+              compNumber.concat(t2Bit.slice(x, x+4)+' ');
+            }
+            break;
+          case 2:
+            compNumber.concat(t2Bit.slice(0,2)+' ');
+            for (var x = 2; x < tempValLength-4; x+=4)
+            {
+              compNumber.concat(t2Bit.slice(x, x+4)+' ');
+            }
+            break;
+          case 3:
+            compNumber.concat(t2Bit.slice(0,3)+' ');
+            for (var x = 3; x < tempValLength-4; x+=4)
+            {
+              compNumber.concat(t2Bit.slice(x, x+4)+' ');
+            }
+          }
+          return compNumber;
+    } else {
+        return "0x"+(tempVal >>> 0).toString(16);
+    }
+  }
+  inner.textContent = valueType(tile.value);
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
