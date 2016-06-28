@@ -62,28 +62,23 @@ HTMLActuator.prototype.addTile = function (tile) {
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
+
   //if math.random() ? 1 : tile.value, if math.random() ? 2 : exponent,
   // if math.random() ? 3 : Binary, if math.random() ? 4 : hex.
   function valueType(tempVal) {
     var rand = Math.random();
     if (rand < .30) {
+      inner.classList.add('reg');
       return tempVal;
     }
-    else if(rand >.30 && rand < .54) { //TODO
+    else if(rand >.30 && rand < .54) {
       var root = Math.log2(tempVal);
-      // if(this.tileContainer.id === undefined)
-      // {
-      //   console.log("This works");
-      // } else {
-      //   console.log("NO");
-      // }
-      // this.tileContainer.id = "exp";
-      //TODO figure out how to change the fonts
+      inner.classList.add('expon');
       return 2+"^"+root;
     }
     else if(rand >.54 && rand < .78) {
         var t2Bit = (tempVal >>> 0).toString(2);
-
+        //TODO why invisible?
         //spaces at 0s
         var tempValLength = t2Bit.length;
         var compNumber = "";
@@ -115,8 +110,10 @@ HTMLActuator.prototype.addTile = function (tile) {
               compNumber.concat(t2Bit.slice(x, x+4)+' ');
             }
           }
+          inner.classList.add('binary');
           return compNumber;
     } else {
+        inner.classList.add('hex');
         return "0x"+(tempVal >>> 0).toString(16);
     }
   }
