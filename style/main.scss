@@ -615,8 +615,11 @@ img.center {
 .expon {
   font-size: 40px;
 }
-.hex {
-  font-size: 30px;
+.hex { //0x
+  font-size: 20px;
+  span {
+    font-size: 30px;
+  }
 }
 .binary {
   font-size: 7px;

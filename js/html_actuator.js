@@ -53,7 +53,8 @@ HTMLActuator.prototype.addTile = function (tile) {
   var inner     = document.createElement("div");
   var position  = tile.previousPosition || { x: tile.x, y: tile.y };
   var positionClass = this.positionClass(position);
-
+  var superScript = document.createElement("sup");
+  var hexScript = document.createElement("span");
   // We can't use classlist because it somehow glitches when replacing classes
   var classes = ["tile", "tile-" + tile.value, positionClass];
 
@@ -67,54 +68,61 @@ HTMLActuator.prototype.addTile = function (tile) {
   // if math.random() ? 3 : Binary, if math.random() ? 4 : hex.
   function valueType(tempVal) {
     var rand = Math.random();
-    if (rand < .30) {
+    if (rand < .34) {
       inner.classList.add('reg');
       return tempVal;
     }
-    else if(rand >.30 && rand < .54) {
+    else if(rand >.34 && rand < .66) {
       var root = Math.log2(tempVal);
       inner.classList.add('expon');
-      return 2+"^"+root;
+      superScript.textContent = root;
+      return 2;
     }
-    else if(rand >.54 && rand < .78) {
-        var t2Bit = (tempVal >>> 0).toString(2);
-        //TODO why invisible?
-        //spaces at 0s
-        var tempValLength = t2Bit.length;
-        var compNumber = "";
-        switch (tempVal % 4) {
-          case 0:
-            for (var x = 0; x < tempValLength-4; x+=4)
-            {
-              compNumber.concat(t2Bit.slice(x, x+4)+' ');
-            }
-            break;
-          case 1:
-            compNumber.concat(t2Bit.slice(0,1)+' ');
-            for (var x = 1; x < tempValLength-4; x+=4)
-            {
-              compNumber.concat(t2Bit.slice(x, x+4)+' ');
-            }
-            break;
-          case 2:
-            compNumber.concat(t2Bit.slice(0,2)+' ');
-            for (var x = 2; x < tempValLength-4; x+=4)
-            {
-              compNumber.concat(t2Bit.slice(x, x+4)+' ');
-            }
-            break;
-          case 3:
-            compNumber.concat(t2Bit.slice(0,3)+' ');
-            for (var x = 3; x < tempValLength-4; x+=4)
-            {
-              compNumber.concat(t2Bit.slice(x, x+4)+' ');
-            }
-          }
-          inner.classList.add('binary');
-          return compNumber;
-    } else {
+    // else if(rand >.54 && rand < .78) {
+    //     var t2Bit = (tempVal >>> 0).toString(2);
+    //     //TODO why invisible?
+    //     //spaces at 0s
+    //     var tempValLength = t2Bit.length;
+    //     var compNumber = "";
+    //     switch (tempValLength % 4) {
+    //       case 0:
+    //         for (var x = 0; x < tempValLength-4; x+=4)
+    //         {
+    //           var tempString = t2Bit.slice(x, x+4);
+    //           console.log("I am a string of binary " + tempString);
+    //           compNumber = compNumber.concat(tempString,' ');
+    //           console.log("I am the concat method (4) of the string: "+compNumber);
+    //         }
+    //         break;
+    //       case 1:
+    //         compNumber.concat(t2Bit.slice(0,1)+' ');
+    //         for (var a = 1; a < tempValLength-4; a+=4)
+    //         {
+    //           compNumber.concat(t2Bit.slice(x, x+4),' ');
+    //         }
+    //         break;
+    //       case 2:
+    //         compNumber.concat(t2Bit.slice(0,2)+' ');
+    //         for (var b = 2; b < tempValLength-4; b+=4)
+    //         {
+    //           compNumber.concat(t2Bit.slice(x, x+4),' ');
+    //         }
+    //         break;
+    //       case 3:
+    //         compNumber.concat(t2Bit.slice(0,3)+' ');
+    //         for (var c = 3; c < tempValLength-4; c+=4)
+    //         {
+    //           compNumber.concat(t2Bit.slice(x, x+4),' ');
+    //         }
+    //       }
+    //       inner.classList.add('binary');
+    //       console.log(compNumber);
+    //       return compNumber;
+    //}
+    else {
         inner.classList.add('hex');
-        return "0x"+(tempVal >>> 0).toString(16);
+        hexScript.textContent = (tempVal >>> 0).toString(16);
+        return "0x";
     }
   }
   inner.textContent = valueType(tile.value);
@@ -138,11 +146,18 @@ HTMLActuator.prototype.addTile = function (tile) {
     this.applyClasses(wrapper, classes);
   }
 
+  //add sup script if exponent
+  inner.appendChild(superScript);
+  //add for hex
+  inner.appendChild(hexScript);
+
   // Add the inner part of the tile to the wrapper
   wrapper.appendChild(inner);
 
   // Put the tile on the board
   this.tileContainer.appendChild(wrapper);
+
+
 };
 
 HTMLActuator.prototype.applyClasses = function (element, classes) {
