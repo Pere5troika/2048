@@ -321,7 +321,7 @@ hr {
     text-align: center;
     font-weight: bold;
     z-index: 10;
-    //font-size: 55px;
+    font-size: 45px;
   }
 
   // Movement transition
@@ -412,7 +412,26 @@ hr {
     }
   }
 }
+/* Custom tile font CSS */
+.tile .tile-inner.hex {
+  font-size: 15px;
 
+  span {
+    font-size: 35px;
+    }
+}
+.tile .tile-inner.expon {
+  font-size: 25px;
+
+  sup {
+    font-size: 35px;
+    }
+}
+
+//TODO make responsive size
+// .binary {
+//   font-size: 7px;
+// }
 @include keyframes(appear) {
   0% {
     opacity: 0;
@@ -607,20 +626,4 @@ img.center {
 .img-responsive {
   width: 60%;
   height: auto;
-}
-//TODO make responsive size
-.reg {
-  font-size: 55px;
-}
-.expon {
-  font-size: 40px;
-}
-.hex { //0x
-  font-size: 20px;
-  span {
-    font-size: 30px;
-  }
-}
-.binary {
-  font-size: 7px;
 }

@@ -147,9 +147,9 @@ HTMLActuator.prototype.addTile = function (tile) {
   }
 
   //add sup script if exponent
-  inner.appendChild(superScript);
+  inner.appendChild(superScript); //TODO remove superScript
   //add for hex
-  inner.appendChild(hexScript);
+  inner.appendChild(hexScript);//TODO remove hex
 
   // Add the inner part of the tile to the wrapper
   wrapper.appendChild(inner);
