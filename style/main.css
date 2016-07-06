@@ -305,6 +305,7 @@ hr {
 
 .tile {
   position: absolute;
+  /* Custom tile font CSS */
   -webkit-transition: 100ms ease-in-out;
   -moz-transition: 100ms ease-in-out;
   transition: 100ms ease-in-out;
@@ -317,7 +318,15 @@ hr {
     text-align: center;
     font-weight: bold;
     z-index: 10;
-    font-size: 45px; }
+    font-size: 40px; }
+  .tile .tile-inner.hex {
+    font-size: 15px; }
+    .tile .tile-inner.hex span {
+      font-size: 35px; }
+  .tile .tile-inner.expon {
+    font-size: 25px; }
+    .tile .tile-inner.expon sup {
+      font-size: 35px; }
   .tile.tile-2 .tile-inner {
     background: #484848;
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0); }
@@ -340,7 +349,7 @@ hr {
     color: #E1E4ED;
     background: #ab9138;
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381), inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
-    font-size: 45px; }
+    font-size: 35px; }
     @media screen and (max-width: 520px) {
       .tile.tile-128 .tile-inner {
         font-size: 25px; } }
@@ -348,7 +357,9 @@ hr {
     color: #E1E4ED;
     background: #bc9d36;
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
-    font-size: 45px; }
+    font-size: 35px; }
+    .tile.tile-256 .tile-inner span {
+      font-size: 30px; }
     @media screen and (max-width: 520px) {
       .tile.tile-256 .tile-inner {
         font-size: 25px; } }
@@ -356,7 +367,9 @@ hr {
     color: #E1E4ED;
     background: #ccaa33;
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683), inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
-    font-size: 45px; }
+    font-size: 35px; }
+    .tile.tile-512 .tile-inner span {
+      font-size: 30px; }
     @media screen and (max-width: 520px) {
       .tile.tile-512 .tile-inner {
         font-size: 25px; } }
@@ -364,7 +377,9 @@ hr {
     color: #E1E4ED;
     background: #ddb631;
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.47619), inset 0 0 0 1px rgba(255, 255, 255, 0.28571);
-    font-size: 35px; }
+    font-size: 30px; }
+    .tile.tile-1024 .tile-inner span {
+      font-size: 30px; }
     @media screen and (max-width: 520px) {
       .tile.tile-1024 .tile-inner {
         font-size: 15px; } }
@@ -372,28 +387,19 @@ hr {
     color: #E1E4ED;
     background: #edc22e;
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
-    font-size: 35px; }
+    font-size: 30px; }
+    .tile.tile-2048 .tile-inner span {
+      font-size: 30px; }
     @media screen and (max-width: 520px) {
       .tile.tile-2048 .tile-inner {
         font-size: 15px; } }
   .tile.tile-super .tile-inner {
     color: #E1E4ED;
     background: #3c3a33;
-    font-size: 30px; }
+    font-size: 25px; }
     @media screen and (max-width: 520px) {
       .tile.tile-super .tile-inner {
         font-size: 10px; } }
-
-/* Custom tile font CSS */
-.tile .tile-inner.hex {
-  font-size: 15px; }
-  .tile .tile-inner.hex span {
-    font-size: 35px; }
-
-.tile .tile-inner.expon {
-  font-size: 25px; }
-  .tile .tile-inner.expon sup {
-    font-size: 35px; }
 
 @-webkit-keyframes $animation-name {
   0% {

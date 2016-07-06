@@ -146,18 +146,16 @@ HTMLActuator.prototype.addTile = function (tile) {
     this.applyClasses(wrapper, classes);
   }
 
-  //add sup script if exponent
-  //if has element sup / hex > remove
-  //TODO
+  //neccesry to center numbers
+  inner.innerHTML = inner.textContent;
 
-
+  if(inner.classList.contains('expon'))
+  {
+    inner.appendChild(superScript);
+  } else if (inner.classList.contains('hex')) {
+    inner.appendChild(hexScript);
+  }
   
-  //if has class expon
-  inner.appendChild(superScript);
-
-  //if has class hex
-  inner.appendChild(hexScript);
-
   // Add the inner part of the tile to the wrapper
   wrapper.appendChild(inner);
 

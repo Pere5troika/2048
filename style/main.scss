@@ -27,8 +27,6 @@ $programFont: "orbitron";
 html, body {
   margin: 0;
   padding: 0;
-
-  // background: #484848;
   color: $text-color;
   font-family: $programFont, "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px;
@@ -321,8 +319,29 @@ hr {
     text-align: center;
     font-weight: bold;
     z-index: 10;
-    font-size: 45px;
+    font-size: 40px;
   }
+
+  /* Custom tile font CSS */
+  .tile-inner.hex {
+    font-size: 15px;
+    span {
+      font-size: 35px;
+    }
+  }
+
+  .tile-inner.expon {
+    font-size: 25px;
+
+    sup {
+      font-size: 35px;
+      }
+  }
+
+  //TODO make responsive size
+  // .binary {
+  //   font-size: 7px;
+  // }
 
   // Movement transition
   @include transition($transition-speed ease-in-out);
@@ -380,16 +399,21 @@ hr {
                     inset 0 0 0 1px rgba(white, $glow-opacity / 3);
       }
 
+      @if $power > 255 {
+       span {
+          font-size: 30px;
+        }
+      }
+      //TODO change to make responsive or reg, hex, expon
       // Adjust font size for bigger numbers
       @if $power >= 100 and $power < 1000 {
-        font-size: 45px;
-
+          font-size: 35px;
         // Media queries placed here to avoid carrying over the rest of the logic
         @include smaller($mobile-threshold) {
           font-size: 25px;
         }
       } @else if $power >= 1000 {
-        font-size: 35px;
+        font-size: 30px;
 
         @include smaller($mobile-threshold) {
           font-size: 15px;
@@ -405,33 +429,14 @@ hr {
     color: $bright-text-color;
     background: mix(#333, $tile-gold-color, 95%);
 
-    font-size: 30px;
+    font-size: 25px;
 
     @include smaller($mobile-threshold) {
       font-size: 10px;
     }
   }
 }
-/* Custom tile font CSS */
-.tile .tile-inner.hex {
-  font-size: 15px;
 
-  span {
-    font-size: 35px;
-    }
-}
-.tile .tile-inner.expon {
-  font-size: 25px;
-
-  sup {
-    font-size: 35px;
-    }
-}
-
-//TODO make responsive size
-// .binary {
-//   font-size: 7px;
-// }
 @include keyframes(appear) {
   0% {
     opacity: 0;
@@ -486,7 +491,6 @@ hr {
   text-align: center;
   float: right;
 }
-
 
 div.game-explanation {
     margin-top: 50px;
@@ -595,9 +599,6 @@ div.game-explanation {
        url('font/matrix-code.svg#svgFontName') format('svg');
 }
 
-// body {
-//   background: black;
-// }
 
 #stats {
     // z-index: 100;
