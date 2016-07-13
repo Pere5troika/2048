@@ -336,28 +336,7 @@ var M = {
 
 	},
 
-	// OLD - not using anymore, too heavy on perf
-	// swapCharacters: function() {
-	// 	var randomCodeIndex;
-	// 	var randomCode;
-	// 	var randomCodeLen;
-	// 	var randomCharIndex;
-	// 	var newRandomCharIndex;
-	// 	var newRandomChar;
 
-	// 	for (var i = 0; i < 20; i++) {
-	// 		randomCodeIndex = M.randomFromInterval(0, (M.codes.length - 1));
-	// 		randomCode = M.codes[randomCodeIndex];
-	// 		randomCodeLen = randomCode.length;
-	// 		randomCharIndex = M.randomFromInterval(2, (randomCodeLen - 1));
-	// 		newRandomCharIndex = M.randomFromInterval(0, (M.letters.length - 1));
-	// 		newRandomChar = M.letters[newRandomCharIndex];
-
-	// 		randomCode[randomCharIndex] = newRandomChar;
-	// 	}
-
-	// 	M.swapCharacters();
-	// },
 
 	createLines: function( ctx ) {
 		var linesYBlack = 0;

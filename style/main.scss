@@ -399,21 +399,41 @@ hr {
                     inset 0 0 0 1px rgba(white, $glow-opacity / 3);
       }
 
-      @if $power > 255 {
-       span {
-          font-size: 30px;
-        }
-      }
-      //TODO change to make responsive or reg, hex, expon
-      // Adjust font size for bigger numbers
+
       @if $power >= 100 and $power < 1000 {
           font-size: 35px;
+
+          &.hex {
+            font-size: 15px;
+            @if $power < 511 {
+              span {
+                font-size: 35px;
+              }
+            } @else {
+              span {
+                font-size: 30px;
+              }
+            }
+          }
+
+          &.expon {
+            font-size: 25px;
+          }
         // Media queries placed here to avoid carrying over the rest of the logic
         @include smaller($mobile-threshold) {
           font-size: 25px;
         }
       } @else if $power >= 1000 {
         font-size: 30px;
+
+        &.hex {
+          font-size: 15px;
+          font-size: 35px;
+        }
+
+        &.expon {
+          font-size: 25px;
+        }
 
         @include smaller($mobile-threshold) {
           font-size: 15px;
@@ -430,6 +450,15 @@ hr {
     background: mix(#333, $tile-gold-color, 95%);
 
     font-size: 25px;
+
+    &.hex {
+      font-size: 15px;
+      font-size: 35px;
+    }
+
+    &.expon {
+      font-size: 25px;
+    }
 
     @include smaller($mobile-threshold) {
       font-size: 10px;
@@ -479,7 +508,7 @@ hr {
 }
 
 .game-intro {
-  margin-top:15px;
+  margin-top:35px;
   float: left;
   line-height: normal;
   margin-bottom: 0;
@@ -508,12 +537,13 @@ div.game-explanation {
   $game-container-margin-top: 17px;
 
   html, body {
+    //overflow: hidden;
     font-size: 15px;
   }
 
   body {
-    margin: 20px 0;
-    padding: 0 20px;
+    //margin: 20px 0;
+    //padding: 0px 20px;
   }
 
   h3.title {
@@ -525,7 +555,7 @@ div.game-explanation {
   }
 
   h1.title {
-    font-size: 80px;
+    font-size: 13.5vw;
     font-weight: bold;
     margin: 0px;
     margin-top: -15px;
@@ -538,6 +568,7 @@ div.game-explanation {
   .container {
     width: $field-width;
     margin: 0 auto;
+
   }
 
   .score-container, .best-container {
@@ -627,4 +658,7 @@ img.center {
 .img-responsive {
   width: 60%;
   height: auto;
+}
+.btc {
+  font-size: 10px;
 }

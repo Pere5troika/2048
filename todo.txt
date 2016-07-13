@@ -1,0 +1,14 @@
+Before Release
+  Figure out how to QA bigger Fonts
+  x Top Formatting
+  Phone Screen QA
+    fix falling code
+  Change Description to list
+  Check FPS
+  Ask devs about usage
+
+Future
+  Binary
+  Choose what types (ie binary, hex) of formats are shown
+  Explain about each number format
+  Fork me on Github
