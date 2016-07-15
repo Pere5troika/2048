@@ -1,12 +1,13 @@
 Before Release
-  Figure out how to QA bigger Fonts
   Phone Screen QA
+  fucking sass mixins - not recognizing new variable in media query <520px
     fix falling code
-  Change Description to list
   Check FPS
   Ask devs about usage
 
   x Top Formatting
+  x Figure out how to QA bigger Fonts
+  x Change Description to list
 
 
 Future

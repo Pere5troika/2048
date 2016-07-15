@@ -530,16 +530,17 @@ hr {
   -moz-animation-fill-mode: backwards;
   animation-fill-mode: backwards; }
 
-.above-game:after {
-  content: "";
-  display: block;
-  clear: both; }
+.above-game {
+  margin-top: 35px; }
+  .above-game:after {
+    content: "";
+    display: block;
+    clear: both; }
 
 .game-intro {
-  margin-top: 35px;
   float: left;
   line-height: normal;
-  margin-bottom: 0; }
+  width: 70%; }
 
 .restart-button {
   display: inline-block;
@@ -819,5 +820,23 @@ img.center {
 
 .btc {
   font-size: 10px; }
+
+.reference {
+  display: block;
+  overflow: auto;
+  clear: right;
+  margin-top: 25px; }
+  .reference div {
+    width: 150px;
+    display: block;
+    float: left; }
+  .reference img {
+    height: 60px;
+    width: 55px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 5px; }
+  .reference p {
+    text-align: center; }
 
 /*# sourceMappingURL=main.css.map */

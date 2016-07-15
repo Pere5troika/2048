@@ -505,13 +505,13 @@ hr {
 
 .above-game {
   @include clearfix;
+  margin-top: 35px;
 }
 
 .game-intro {
-  margin-top:35px;
   float: left;
   line-height: normal;
-  margin-bottom: 0;
+  width: 70%;
 }
 
 .restart-button {
@@ -661,4 +661,25 @@ img.center {
 }
 .btc {
   font-size: 10px;
+}
+.reference {
+  display: block;
+  overflow: auto;
+  clear: right;
+  margin-top: 25px;
+  div {
+    width: 150px;
+    display: block;
+    float: left;
+  }
+  img {
+    height: 60px;
+    width: 55px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 5px;
+  }
+  p {
+    text-align: center;
+  }
 }
