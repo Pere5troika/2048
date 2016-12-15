@@ -42,6 +42,9 @@ padding-top: 15px;
 font-size: 40px;
 font-family: $programFont, "Clear Sans", "Helvetica Neue", Arial, sans-serif;
 font-weight: bold;
+  @include smaller($mobile-threshold) {
+    font-size: 25px;
+  }
 }
 
 
